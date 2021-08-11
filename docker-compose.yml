@@ -1,0 +1,13 @@
+version: '3'
+services:
+  media:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "25478:25478"
+    volumes:
+    - ./upload:/var/root
+    command: sh -c "echo 123 && /usr/local/bin/app -token dmonster /var/root"
+
+
